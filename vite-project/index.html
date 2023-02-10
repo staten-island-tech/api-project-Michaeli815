@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <style>
-      button {
-        padding: 0.7rem;
-        width: 20%
-      }
-    </style>
-  </head>
-  <body>
 
-    <header class="header">
-      <h1 class="header-title">Inspiration</h1>
-    </header>
-    <div class="filterb">
-      <button class="filter-buttons" id="all">Quote </button>
-      <button class="filter-buttons" id="author">Author</button>
-      <button class="filter-buttons" id="length1">Length</button>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+  <style>
+    button {
+      padding: 0.7rem;
+      width: 20%
+    }
+  </style>
+</head>
 
-    <div class="card-container">
-      <h2 class="cards"></h2>
-    </div>
-    <script type="module" src="./js/main.js"></script>
-  </body>
+<body>
+
+  <header class="header">
+    <h1 class="header-title">Inspiration</h1>
+  </header>
+  <div class="filterb">
+    <button class="filter-buttons" id="all">All</button>
+    <button class="filter-buttons" id="designer">Designer</button>
+    <button class="filter-buttons" id="summer">Summer</button>
+    <button class="filter-buttons" id="winter">Winter</button>
+    <button class="filter-buttons" id="kids">Kids </button>
+    <button class="filter-buttons" id="adults">Adults</button>
+  </div>
+
+  <div class="card-container">
+    <h2 class="cards"></h2>
+  </div>
+  <script type="module" src="./js/main.js"></script>
+</body>
+
 </html>
