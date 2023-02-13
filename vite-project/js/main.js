@@ -31,93 +31,109 @@ function ItemDisplay(URL) {
   );
 }
 
+// async function getData(URL) {
+//   try{
+//     const response = await fetch(URL);
+//     const data = await response.json();
+//     console.log(data)
+//     return data;
+//   }catch (error) {
+//     console.error(error)
+//   }
+// }
+
 function Displaying() {
      fetch(URL)
        .then((response) => response.json())
        .then((data) => {
          document.querySelector(".cards").textContent = data.cards;
+         console.log(data)
+         data.cards.forEach((element)=>console.log(element.code))
+         return data;
        })
        .catch((error) => console.log(error));
    }
 Displaying();
 
-function displayall() {
-  menu
-    .filter((menu) => menu.All === true)
-    .forEach((menu) => {
-      ItemDisplay(menu);
-    });
-}
+func
 
-function displayDesigner() {
-  menu
-    .filter((menu) => menu.Designer === true)
-    .forEach((menu) => {
-      ItemDisplay(menu);
-    });
-}
-function displaySummer() {
-  menu
-    .filter((menu) => menu.Summer === true)
-    .forEach((menu) => {
-      ItemDisplay(menu);
-    });
-}
-function displayWinter() {
-  menu
-    .filter((menu) => menu.winter === true)
-    .forEach((menu) => {
-      ItemDisplay(menu);
-    });
-}
-function displayKids() {
-  menu
-    .filter((menu) => menu.Kids === true)
-    .forEach((menu) => {
-      ItemDisplay(menu);
-    });
-}
-function displayAdults() {
-  menu
-    .filter((menu) => menu.Adult === true)
-    .forEach((menu) => {
-      ItemDisplay(menu);
-    });
-}
+// function displayall() {
+//   menu
+//     .filter((menu) => menu.All === true)
+//     .forEach((menu) => {
+//       ItemDisplay(menu);
+//     });
+// }
 
-function Designerp() {
-  erase();
-  displayDesigner();
-}
+// function displayDesigner() {
+//   menu
+//     .filter((menu) => menu.Designer === true)
+//     .forEach((menu) => {
+//       ItemDisplay(menu);
+//     });
+// }
+// function displaySummer() {
+//   menu
+//     .filter((menu) => menu.Summer === true)
+//     .forEach((menu) => {
+//       ItemDisplay(menu);
+//     });
+// }
+// function displayWinter() {
+//   menu
+//     .filter((menu) => menu.winter === true)
+//     .forEach((menu) => {
+//       ItemDisplay(menu);
+//     });
+// }
+// function displayKids() {
+//   menu
+//     .filter((menu) => menu.Kids === true)
+//     .forEach((menu) => {
+//       ItemDisplay(menu);
+//     });
+// }
+// function displayAdults() {
+//   menu
+//     .filter((menu) => menu.Adult === true)
+//     .forEach((menu) => {
+//       ItemDisplay(menu);
+//     });
+// }
 
-function Allp() {
-  erase();
-  displayall();
-}
+// function Designerp() {
+//   erase();
+//   displayDesigner();
+// }
 
-function Summerp() {
-  erase();
-  displaySummer();
-}
-function Winterp() {
-  erase();
-  displayWinter();
-}
-function Kidsp() {
-  erase();
-  displayKids();
-}
-function Adultsp() {
-  erase();
-  displayAdults();
-}
+// function Allp() {
+//   erase();
+//   displayall();
+// }
 
-DOMSelectors.Designerb.addEventListener("click", Designerp);
-DOMSelectors.allb.addEventListener("click", Allp);
-DOMSelectors.summerb.addEventListener("click", Summerp);
-DOMSelectors.winterb.addEventListener("click", Winterp);
-DOMSelectors.kidsb.addEventListener("click", Kidsp);
-DOMSelectors.adultsb.addEventListener("click", Adultsp);
+// function Summerp() {
+//   erase();
+//   displaySummer();
+// }
+// function Winterp() {
+//   erase();
+//   displayWinter();
+// }
+// function Kidsp() {
+//   erase();
+//   displayKids();
+// }
+// function Adultsp() {
+//   erase();
+//   displayAdults();
+// }
+
+// DOMSelectors.Designerb.addEventListener("click", Designerp);
+// DOMSelectors.allb.addEventListener("click", Allp);
+// DOMSelectors.summerb.addEventListener("click", Summerp);
+// DOMSelectors.winterb.addEventListener("click", Winterp);
+// DOMSelectors.kidsb.addEventListener("click", Kidsp);
+// DOMSelectors.adultsb.addEventListener("click", Adultsp);
 // const DOMSelectors = {
 //   all: document.querySelector("#all"),
 //   author: document.querySelector("#author"),
