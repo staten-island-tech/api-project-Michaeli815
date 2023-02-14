@@ -9,23 +9,25 @@ body,
 
 }
 
-body{
+body {
   background-color: blue;
 }
-.header-title{
-    display: flex;
-    justify-content: center;
-    font-size: 8rem;
-    margin: 3% auto;
-    border: 1rem solid rgb(255, 0, 0);
-    width: 65%;
-    text-align: center;
-    border-radius: 3rem;
-    box-sizing: border-box;
-    background-color: lime;
-    box-shadow: 10px 10px 3px yellow;
-    padding: 2rem;
+
+.header-title {
+  display: flex;
+  justify-content: center;
+  font-size: 8rem;
+  margin: 3% auto;
+  border: 1rem solid rgb(255, 0, 0);
+  width: 65%;
+  text-align: center;
+  border-radius: 3rem;
+  box-sizing: border-box;
+  background-color: lime;
+  box-shadow: 10px 10px 3px yellow;
+  padding: 2rem;
 }
+
 .filterb {
   align-items: center;
   display: flex;
@@ -33,7 +35,8 @@ body{
   justify-content: space-evenly;
   box-sizing: border-box;
 }
-.filter-buttons{
+
+.filter-buttons {
   font-size: 4rem;
   padding: 9rem auto;
   margin: 3% auto;
@@ -41,7 +44,7 @@ body{
   text-align: center;
   border-radius: 2rem;
   box-sizing: border-box;
-  background-color:green;
+  background-color: green;
   box-shadow: 5px 5px 3px white;
 }
 
@@ -50,7 +53,8 @@ body{
   border: 0.5rem solid rgb(0, 0, 0);
   box-shadow: 5px 5px 3px rgb(0, 0, 0);
 }
-.cards{
+
+.cards {
   box-shadow: 10px 7px 5px lightblue;
   border-radius: 3rem;
   width: 26%;
@@ -67,8 +71,8 @@ body{
 
 
   .header-title {
-      font-size: 7.5rem;
-      margin: 3.5% auto;
+    font-size: 7.5rem;
+    margin: 3.5% auto;
 
   }
 }
@@ -77,15 +81,15 @@ body{
 
 
   .header-title {
-      font-size: 6rem;
-      margin: 5% auto;
+    font-size: 6rem;
+    margin: 5% auto;
 
   }
 }
 
 @media (max-width: 420px) {
 
-  .cards{
+  .cards {
     box-shadow: 10px 7px 5px lightblue;
     border-radius: 3rem;
     width: 30%;
@@ -97,8 +101,8 @@ body{
     border: 0.3rem solid darkblue;
     padding: 2rem;
   }
-  
-  .filter-buttons{
+
+  .filter-buttons {
     font-size: 1.5rem;
     padding: 9rem auto;
     margin: 3% auto;
@@ -106,13 +110,20 @@ body{
     text-align: center;
     border-radius: 2rem;
     box-sizing: border-box;
-    background-color:green;
+    background-color: green;
     box-shadow: 5px 5px 3px white;
   }
 
   .header-title {
-      font-size: 4.5rem;
-      margin: 7% auto;
+    font-size: 4.5rem;
+    margin: 7% auto;
 
   }
+}
+
+.card-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  rows: 5;
 }

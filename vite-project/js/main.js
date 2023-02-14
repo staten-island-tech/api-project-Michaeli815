@@ -9,7 +9,7 @@ const DOMSelectors = {
   Cloverb: document.querySelector("#winter"),
   Diamondb: document.querySelector("#kids"),
   Royalsb: document.querySelector("#adults"),
-  cardcontainer: document.querySelector(".cardcontainer"),
+  cardcontainer: document.getElementsByClassName("card-container"),
 };
 
 function erase() {
@@ -46,16 +46,21 @@ function Displaying() {
      fetch(URL)
        .then((response) => response.json())
        .then((data) => {
-         document.querySelector(".cards").textContent = data.cards;
-         console.log(data)
-         data.cards.forEach((element)=>console.log(element.code))
-         return data;
-       })
+        //  document.querySelector(".cards").textContent = data.cards;
+        //  console.log(data)
+
+         data.cards.forEach((element)=> console.log(element.code))
+
+         data.cards.forEach((element)=> document.querySelector(".card-container").insertAdjacentHTML("beforeend",
+         `<div>
+         <h2 class="cards">${element.code}</h2>
+         </div>`)
+       )})
        .catch((error) => console.log(error));
    }
 Displaying();
 
-func
+
 
 // function displayall() {
 //   menu
