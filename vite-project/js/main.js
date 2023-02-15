@@ -4,32 +4,33 @@ const URL = "https://deckofcardsapi.com/api/deck/new/draw/?count=52";
 
 const DOMSelectors = {
   allb: document.querySelector("#all"),
-  Heartsb: document.querySelector("#designer"),
-  Spadesb: document.querySelector("#summer"),
-  Cloverb: document.querySelector("#winter"),
-  Diamondb: document.querySelector("#kids"),
-  Royalsb: document.querySelector("#adults"),
-  cardcontainer: document.getElementsByClassName("card-container"),
+  Heartsb: document.querySelector("#Hearts"),
+  Spadesb: document.querySelector("#Spades"),
+  Cloverb: document.querySelector("#Clubs"),
+  Diamondb: document.querySelector("#Diamonds"),
+  Royalsb: document.querySelector("#Royals"),
+  cardcontainer: document.querySelector(".card-container"),
 };
 
 function erase() {
   DOMSelectors.cardcontainer.innerHTML = "";
 }
 
-function ItemDisplay(URL) {
-  document.querySelector(".cardcontainer").insertAdjacentHTML(
-    "beforeend",
-    `<div class="card">
-      <div class="card-image">
-        <img class="pic" src="${URL.image}" width="220rem" height="240rem">
-      </div>
-      <div class="card-content">
-        <h3>${URL.value}</h3>
-        <p>$${URL.suit}</p>
-      </div>
-  </div>`
-  );
-}
+// function ItemDisplay() {
+ 
+//   data.cards.forEach((element)=> document.querySelector(".card-container").insertAdjacentHTML(
+//     "beforeend",
+//     `<div class="card">
+//       <div class="card-image">
+//         <img class="pic" src="${element.image}" width="220rem" height="240rem">
+//       </div>
+//       <div class="card-content">
+//         <h3>${element.value}</h3>
+//         <p>$${element.suit}</p>
+//       </div>
+//   </div>`
+//   )
+// };
 
 // async function getData(URL) {
 //   try{
@@ -46,15 +47,19 @@ function Displaying() {
      fetch(URL)
        .then((response) => response.json())
        .then((data) => {
-        //  document.querySelector(".cards").textContent = data.cards;
-        //  console.log(data)
 
          data.cards.forEach((element)=> console.log(element.code))
 
-         data.cards.forEach((element)=> document.querySelector(".card-container").insertAdjacentHTML("beforeend",
-         `<div>
-         <h2 class="cards">${element.code}</h2>
-         </div>`)
+         data.cards.forEach((element)=> document.querySelector(".card-container").insertAdjacentHTML(    "beforeend",
+         `<div class="cards">
+           <div class="card-image">
+             <img class="pic" src="${element.image}">
+           </div>
+           <div class="card-content">
+             <h3>${element.value}</h3>
+             <p>${element.suit}</p>
+           </div>
+       </div>`)
        )})
        .catch((error) => console.log(error));
    }
@@ -62,83 +67,83 @@ Displaying();
 
 
 
-// function displayall() {
-//   menu
-//     .filter((menu) => menu.All === true)
-//     .forEach((menu) => {
-//       ItemDisplay(menu);
-//     });
-// }
+function displayall() {
+  menu
+    .filter((menu) => menu.All === true)
+    .forEach((menu) => {
+      ItemDisplay(menu);
+    });
+}
 
-// function displayDesigner() {
-//   menu
-//     .filter((menu) => menu.Designer === true)
-//     .forEach((menu) => {
-//       ItemDisplay(menu);
-//     });
-// }
-// function displaySummer() {
-//   menu
-//     .filter((menu) => menu.Summer === true)
-//     .forEach((menu) => {
-//       ItemDisplay(menu);
-//     });
-// }
-// function displayWinter() {
-//   menu
-//     .filter((menu) => menu.winter === true)
-//     .forEach((menu) => {
-//       ItemDisplay(menu);
-//     });
-// }
-// function displayKids() {
-//   menu
-//     .filter((menu) => menu.Kids === true)
-//     .forEach((menu) => {
-//       ItemDisplay(menu);
-//     });
-// }
-// function displayAdults() {
-//   menu
-//     .filter((menu) => menu.Adult === true)
-//     .forEach((menu) => {
-//       ItemDisplay(menu);
-//     });
-// }
+function displayHearts() {
+  menu
+    .filter((menu) => menu.suit === "HEARTS")
+    .forEach((menu) => {
+      ItemDisplay(menu);
+    });
+}
+function displaySummer() {
+  menu
+    .filter((menu) => menu.Summer === true)
+    .forEach((menu) => {
+      ItemDisplay(menu);
+    });
+}
+function displayWinter() {
+  menu
+    .filter((menu) => menu.winter === true)
+    .forEach((menu) => {
+      ItemDisplay(menu);
+    });
+}
+function displayKids() {
+  menu
+    .filter((menu) => menu.Kids === true)
+    .forEach((menu) => {
+      ItemDisplay(menu);
+    });
+}
+function displayAdults() {
+  menu
+    .filter((menu) => menu.Adult === true)
+    .forEach((menu) => {
+      ItemDisplay(menu);
+    });
+}
 
-// function Designerp() {
-//   erase();
-//   displayDesigner();
-// }
+function Designerp() {
+  erase();
+  displayDesigner();
+}
 
-// function Allp() {
-//   erase();
-//   displayall();
-// }
+function Allp() {
+  erase();
+  displayall();
+}
 
-// function Summerp() {
-//   erase();
-//   displaySummer();
-// }
-// function Winterp() {
-//   erase();
-//   displayWinter();
-// }
-// function Kidsp() {
-//   erase();
-//   displayKids();
-// }
-// function Adultsp() {
-//   erase();
-//   displayAdults();
-// }
+function Summerp() {
+  erase();
+  displaySummer();
+}
+function Winterp() {
+  erase();
+  displayWinter();
+}
+function Kidsp() {
+  erase();
+  displayKids();
+}
+function Adultsp() {
+  erase();
+  displayAdults();
+}
 
-// DOMSelectors.Designerb.addEventListener("click", Designerp);
-// DOMSelectors.allb.addEventListener("click", Allp);
-// DOMSelectors.summerb.addEventListener("click", Summerp);
-// DOMSelectors.winterb.addEventListener("click", Winterp);
-// DOMSelectors.kidsb.addEventListener("click", Kidsp);
-// DOMSelectors.adultsb.addEventListener("click", Adultsp);
+DOMSelectors.Designerb.addEventListener("click", Designerp);
+DOMSelectors.allb.addEventListener("click", Allp);
+DOMSelectors.summerb.addEventListener("click", Summerp);
+DOMSelectors.winterb.addEventListener("click", Winterp);
+DOMSelectors.kidsb.addEventListener("click", Kidsp);
+DOMSelectors.adultsb.addEventListener("click", Adultsp);
 // const DOMSelectors = {
 //   all: document.querySelector("#all"),
 //   author: document.querySelector("#author"),
