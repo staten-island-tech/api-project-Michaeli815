@@ -39,7 +39,7 @@ const DOMSelectors = {
 //     console.error(error)
 //   }
 // }
-
+// getData();
 
 
 function Displaying() {
@@ -59,6 +59,7 @@ function Displaying() {
              <p>${element.suit}</p>
            </div>
        </div>`)
+       
        )})
        .catch((error) => console.log(error));
    }
@@ -68,8 +69,8 @@ Displaying();
 
 function displayall() {
 
-    data.cards.forEach((element)=> document.querySelector(".card-container").filter (() => element.suit ==="HEARTS")
-    .forEach((element) => {
+  data.cards.forEach((element)=> element.filter ((element) => element.suit ==="HEARTS")
+  .forEach((element) => {
       Displaying(element);
     })
 )}
