@@ -47,7 +47,6 @@ function Displaying() {
        .then((response) => response.json())
        .then((data) => {
 
-         data.cards.forEach((element)=> console.log(element.code))
 
          data.cards.forEach((element)=> document.querySelector(".card-container").insertAdjacentHTML(    "beforeend",
          `<div class="cards">
@@ -69,12 +68,22 @@ Displaying();
 
 function displayall() {
 
-  data.cards.forEach((element)=> element.filter ((element) => element.suit ==="HEARTS")
-  .forEach((element) => {
-      Displaying(element);
-    })
-)}
+fetch(URL)
+.then((response) => response.json())
+.then((datah) => {
 
+  datah.cards.forEach(()=> filter((element) => element.suit === "HEARTS")
+  .forEach((element) => {
+    ItemDisplay(element);
+  })
+  )})
+  .catch((error) => console.log(error));
+}
+
+// element.filter((element) => element.suit ==="HEARTS")
+//   .forEach((element) => {
+//       Displaying(element);
+//     })
 // function displayHearts() {
 //   menu
 //     .filter((menu) => menu.suit === "HEARTS")
