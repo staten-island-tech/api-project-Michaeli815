@@ -109,12 +109,14 @@ function displayDiamonds() {
       </div>
   </div>`))
   })}
+
 function displayRoyals() {
   fetch(URL)
   .then((response) => response.json())
   .then((datah) => {
   
-    datah.cards.filter((element) => element.value> 9)
+    datah.cards.filter((element) => 
+    element.value >11)
     .forEach((element) => document.querySelector(".card-container").insertAdjacentHTML(    "beforeend",
     `<div class="cards">
       <div class="card-image">
@@ -163,51 +165,4 @@ DOMSelectors.Heartsb.addEventListener("click", Heartsp);
 DOMSelectors.Spadesb.addEventListener("click", Spadesp);
 DOMSelectors.Cloverb.addEventListener("click", Clubsp);
 DOMSelectors.Diamondb.addEventListener("click", Diamondp);
-DOMSelectors.adultsb.addEventListener("click", Royalsp);
-// const DOMSelectors = {
-//   all: document.querySelector("#all"),
-//   author: document.querySelector("#author"),
-//   length1: document.querySelector("#length1"),
-//   quote: document.querySelector("#quote"),
-// };
-
-// function displayall() {
-//   fetch(URL)
-//     .then((response) => response.json())
-//     .then((data) => {
-//       document.querySelector(".cards").textContent = data.content;
-//     })
-//     .catch((error) => console.log(error));
-// }
-
-// function displayauthor() {
-//   fetch(URL)
-//     .then((response) => response.json())
-//     .then((data) => {
-//       document.querySelector(".cards").textContent = data.author;
-//     })
-//     .catch((error) => console.log(error));
-// }
-
-// function displaylength() {
-//   fetch(URL)
-//     .then((response) => response.json())
-//     .then((data) => {
-//       document.querySelector(".cards").textContent = data.length;
-//     })
-//     .catch((error) => console.log(error));
-// }
-
-// DOMSelectors.all.addEventListener("click", displayall);
-// DOMSelectors.author.addEventListener("click", displayauthor);
-// DOMSelectors.length1.addEventListener("click", displaylength);
-
-// function getData(URL) {
-//   fetch(URL)
-//     .then((response) => response.json())
-//     .then((data) => {
-//       document.querySelector(".cards").textContent = data.content;
-//     })
-//     .catch((error) => console.log(error));
-// }
-// getData(URL);
+DOMSelectors.Royalsb.addEventListener("click", Royalsp);
