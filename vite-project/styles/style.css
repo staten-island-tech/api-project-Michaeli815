@@ -29,6 +29,7 @@ body {
 }
 
 .filterb {
+
   align-items: center;
   display: flex;
   justify-content: center;
@@ -37,6 +38,7 @@ body {
 }
 
 .filter-buttons {
+  width: 14%;
   font-size: 4rem;
   padding: 9rem auto;
   margin: 3% auto;
