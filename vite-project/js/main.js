@@ -110,13 +110,13 @@ function displayDiamonds() {
   </div>`))
   })}
 
-function displayRoyals() {
+function displayK() {
   fetch(URL)
   .then((response) => response.json())
   .then((datah) => {
   
     datah.cards.filter((element) => 
-    element.value >11)
+    element.value.includes("K"))
     .forEach((element) => document.querySelector(".card-container").insertAdjacentHTML(    "beforeend",
     `<div class="cards">
       <div class="card-image">
@@ -128,6 +128,25 @@ function displayRoyals() {
       </div>
   </div>`))
   })}
+
+  function displayE() {
+    fetch(URL)
+    .then((response) => response.json())
+    .then((datah) => {
+    
+      datah.cards.filter((element) => 
+      element.value.includes("E"))
+      .forEach((element) => document.querySelector(".card-container").insertAdjacentHTML(    "beforeend",
+      `<div class="cards">
+        <div class="card-image">
+          <img class="pic" src="${element.image}">
+        </div>
+        <div class="card-content">
+          <h3>${element.value}</h3>
+          <p>${element.suit}</p>
+        </div>
+    </div>`))
+    })}
 
 function erase() {
   DOMSelectors.cardcontainer.innerHTML = "";
@@ -157,7 +176,8 @@ function Diamondp() {
 }
 function Royalsp() {
   erase();
-  displayRoyals();
+  displayK();
+  displayE();
 }
 
 DOMSelectors.allb.addEventListener("click", Allp);
